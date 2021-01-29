@@ -1,7 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  background-color: lightcyan;
+body {
+  margin: 10px;
+  padding: 10px;
+  /*background-color: lightcyan;*/
+  background-image: url("sea.jpg");
+  background-repeat: no-repeat;
+  background-size: 1500px;
+  background-position: center;
 }
 
 #header {
@@ -11,26 +15,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Algerian';
+  font-family: 'Algerian', sans-serif;
+  font-size: 30px;
 }
 div.new
 {
   display:flex;
   justify-content: space-between;
-  font-size:large;
+  font-size:30px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 1000;
 }
-span.newgame
+#newgame
 {
-  font-size:10px;
+  font-size :30px;
   font-weight: 900;
   
 }
 
 
-#container {
-  background-color:darkcyan;
-  height: 450px;
+#gridcontainer {
+  
+  height: 350px;
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
@@ -39,9 +46,10 @@ span.newgame
 
 
 .tile {
-  margin: 10px;
+  margin: 5px;
   padding: 50px;
   border-style:ridge;
   border-color: linen;
+  text-align: center;
 }
 

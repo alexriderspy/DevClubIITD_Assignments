@@ -13,12 +13,12 @@
     </div>
     <div class="new">
     <span class="track">Number of tries:--><span id="count">0</span></span>
-    <span class="newgame">
-      <button type="button" onclick=
+    <span>
+      <button type="button" id="newgame" onclick=
       "window.location='file:///C:/Users/skdsu/OneDrive/Desktop/devclub_local/ColorGame/index.html';">
         New Game</button></span>
     </div>
-      <div id="container">
+      <div id="gridcontainer">
       <div class="tile" id="1">Tile 1</div>
       <div class="tile" id="2">Tile 2</div>
       <div class="tile" id="3">Tile 3</div>
@@ -68,17 +68,17 @@
            case 5: correctColor = t5.style.background; break;
            case 6: correctColor = t6.style.background; break;
         }
-        /* console.log(x);
-        console.log(correctColor); */
+        
 
         document.getElementById("header-clue").innerHTML = correctColor;
       }
 
       t1.addEventListener("click", function () {
         if (t1.style.background == correctColor) {
-          document.getElementById("1").innerHTML="Congrats! You guessed the correct color."
+          document.getElementById("1").innerHTML="Congrats!<br> You guessed <br>the correct color."
         } else {
-          t1.style.background = "black";
+          t1.style.background = "white";
+          document.getElementById("1").innerHTML="Oops! <br>It's the<br> wrong color. "
           c++;
           count.innerHTML=c;
         }
@@ -86,45 +86,50 @@
 
       t2.addEventListener("click", function () {
         if (t2.style.background == correctColor) {
-          document.getElementById("2").innerHTML="Congrats! You guessed the correct color."
+          document.getElementById("2").innerHTML="Congrats!<br> You guessed <br>the correct color."
         } else {
-          t2.style.background = "black";
+          t2.style.background = "white";
+          document.getElementById("2").innerHTML="Oops!<br> It's the <br>wrong color."
           c++;
           count.innerHTML=c;
         }
       });
       t3.addEventListener("click", function () {
         if (t3.style.background == correctColor) {
-          document.getElementById("3").innerHTML="Congrats! You guessed the correct color."
+          document.getElementById("3").innerHTML="Congrats! <br>You guessed <br>the correct color."
         } else {
-          t3.style.background = "black";
+          t3.style.background = "white";
+          document.getElementById("3").innerHTML="Oops!<br> It's the<br> wrong color."
           c++;
           count.innerHTML=c;
         }
       });
       t4.addEventListener("click", function () {
         if (t4.style.background == correctColor) {
-          document.getElementById("4").innerHTML="Congrats! You guessed the correct color."
+          document.getElementById("4").innerHTML="Congrats! <br>You guessed <br>the correct color."
         } else {
-          t4.style.background = "black";
+          t4.style.background = "white";
+          document.getElementById("4").innerHTML="Oops!<br> It's the <br> wrong color."
           c++;
           count.innerHTML=c;
         }
       });
       t5.addEventListener("click", function () {
         if (t5.style.background == correctColor) {
-          document.getElementById("5").innerHTML="Congrats! You guessed the correct color."
+          document.getElementById("5").innerHTML="Congrats!<br> You guessed <br>the correct color."
         } else {
-          t5.style.background = "black";
+          t5.style.background = "white";
+          document.getElementById("5").innerHTML="Oops!<br> It's the <br>wrong color."
           c++;
           count.innerHTML=c;
         }
       });
       t6.addEventListener("click", function () {
         if (t6.style.background == correctColor) {
-          document.getElementById("6").innerHTML="Congrats! You guessed the correct color."
+          document.getElementById("6").innerHTML="Congrats! <br>You guessed <br>the correct color."
         } else {
-          t6.style.background = "black";
+          t6.style.background = "white";
+          document.getElementById("6").innerHTML="Oops!<br> It's the wrong color."
           c++;
           count.innerHTML=c;
         }
