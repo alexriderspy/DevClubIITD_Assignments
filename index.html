@@ -15,7 +15,7 @@
     <span class="track">Number of tries:--><span id="count">0</span></span>
     <span>
       <button type="button" id="newgame" onclick=
-      "window.location='https://alexriderspy.github.io/DevClubIITD_Assignments/';">
+      "newGame()">
         New Game</button></span>
     </div>
       <div id="gridcontainer">
@@ -38,8 +38,7 @@
       var t6 = document.getElementById("6");
       var x;
       var correctColor;
-      var count = document.getElementById("count");
-      var c=count.innerHTML;
+      
       function getRandomColor() {
         var letters = "0123456789ABCDEF";
         var color = "#";
@@ -48,7 +47,8 @@
         }
         return color;
       }
-
+      var count = document.getElementById("count");
+      var c=count.innerHTML;
       function newGame() {
         t1.style.background = getRandomColor();
         t2.style.background = getRandomColor();
@@ -56,9 +56,18 @@
         t4.style.background = getRandomColor();
         t5.style.background = getRandomColor();
         t6.style.background = getRandomColor();
+        
+        document.getElementById("1").innerHTML="Tile 1";
+        document.getElementById("2").innerHTML="Tile 2";
+        document.getElementById("3").innerHTML="Tile 3";
+        document.getElementById("4").innerHTML="Tile 4";
+        document.getElementById("5").innerHTML="Tile 5";
+        document.getElementById("6").innerHTML="Tile 6";
 
         x = Math.floor(Math.random() * 6 + 1);
-        
+        c=0;
+        document.getElementById("count").innerHTML=0;
+       
         switch(x)
         {
            case 1: correctColor = t1.style.background; break;
@@ -72,6 +81,7 @@
 
         document.getElementById("header-clue").innerHTML = correctColor;
       }
+      
 
       t1.addEventListener("click", function () {
         if (t1.style.background == correctColor) {
