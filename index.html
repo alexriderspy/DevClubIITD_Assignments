@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Color Game</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body onload="newGame()">
+    <div id="header">
+      <h1>The Great Guessing Game</h1>
+      <h2 id="header-clue">rgb(xxx,xxx,xxx)</h2>
+      
+    </div>
+    <div class="new">
+    <span class="track">Number of tries:--><span id="count">0</span></span>
+    <span class="newgame">
+      <button type="button" onclick=
+      "window.location='file:///C:/Users/skdsu/OneDrive/Desktop/devclub_local/ColorGame/index.html';">
+        New Game</button></span>
+    </div>
+      <div id="container">
+      <div class="tile" id="1">Tile 1</div>
+      <div class="tile" id="2">Tile 2</div>
+      <div class="tile" id="3">Tile 3</div>
+      
+      <div class="tile" id="4">Tile 4</div>
+      <div class="tile" id="5">Tile 5</div>
+      <div class="tile" id="6">Tile 6</div>
+      </div>
+    
+
+    <script>
+      var t1 = document.getElementById("1");
+      var t2 = document.getElementById("2");
+      var t3 = document.getElementById("3");
+      var t4 = document.getElementById("4");
+      var t5 = document.getElementById("5");
+      var t6 = document.getElementById("6");
+      var x;
+      var correctColor;
+      var count = document.getElementById("count");
+      var c=count.innerHTML;
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function newGame() {
+        t1.style.background = getRandomColor();
+        t2.style.background = getRandomColor();
+        t3.style.background = getRandomColor();
+        t4.style.background = getRandomColor();
+        t5.style.background = getRandomColor();
+        t6.style.background = getRandomColor();
+
+        x = Math.floor(Math.random() * 6 + 1);
+        
+        switch(x)
+        {
+           case 1: correctColor = t1.style.background; break;
+           case 2: correctColor = t2.style.background; break;
+           case 3: correctColor = t3.style.background; break;
+           case 4: correctColor = t4.style.background; break;
+           case 5: correctColor = t5.style.background; break;
+           case 6: correctColor = t6.style.background; break;
+        }
+        /* console.log(x);
+        console.log(correctColor); */
+
+        document.getElementById("header-clue").innerHTML = correctColor;
+      }
+
+      t1.addEventListener("click", function () {
+        if (t1.style.background == correctColor) {
+          document.getElementById("1").innerHTML="Congrats! You guessed the correct color."
+        } else {
+          t1.style.background = "black";
+          c++;
+          count.innerHTML=c;
+        }
+      });
+
+      t2.addEventListener("click", function () {
+        if (t2.style.background == correctColor) {
+          document.getElementById("2").innerHTML="Congrats! You guessed the correct color."
+        } else {
+          t2.style.background = "black";
+          c++;
+          count.innerHTML=c;
+        }
+      });
+      t3.addEventListener("click", function () {
+        if (t3.style.background == correctColor) {
+          document.getElementById("3").innerHTML="Congrats! You guessed the correct color."
+        } else {
+          t3.style.background = "black";
+          c++;
+          count.innerHTML=c;
+        }
+      });
+      t4.addEventListener("click", function () {
+        if (t4.style.background == correctColor) {
+          document.getElementById("4").innerHTML="Congrats! You guessed the correct color."
+        } else {
+          t4.style.background = "black";
+          c++;
+          count.innerHTML=c;
+        }
+      });
+      t5.addEventListener("click", function () {
+        if (t5.style.background == correctColor) {
+          document.getElementById("5").innerHTML="Congrats! You guessed the correct color."
+        } else {
+          t5.style.background = "black";
+          c++;
+          count.innerHTML=c;
+        }
+      });
+      t6.addEventListener("click", function () {
+        if (t6.style.background == correctColor) {
+          document.getElementById("6").innerHTML="Congrats! You guessed the correct color."
+        } else {
+          t6.style.background = "black";
+          c++;
+          count.innerHTML=c;
+        }
+      });
+
+    </script> 
+  </body>
+</html>
