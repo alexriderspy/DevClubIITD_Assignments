@@ -17,6 +17,6 @@ Now we basically need to merge conflicts so what we do is
 1. git pull origin master
 or maybe only git pull
 2. merge all conflicts manually
-3. git push origin master
+3. git push origin master     or try git push (if origin master not working)
 
 done
